@@ -1,5 +1,7 @@
 import React from "react";
-import { ImageBackground, StyleSheet, View, Image, Text, } from "react-native";
+import { StyleSheet, View, Image, Text, } from "react-native";
+
+import colors from "../config/colors";
 
 // import React, {useState, Component, ImageBackground} from 'react';
 // import { ImageBackground } from 'react';
@@ -66,22 +68,26 @@ function WelcomeScreen(props) {
         <View style={styles.container}>
         
             <View style={{
-                backgroundColor: "rgba(255,0,0,0.5)",
-                height: 300,
-                width: 300,
+                backgroundColor: colors.pred,
+                height: 200,
+                width: 200,
                 // height: 300, // not required as its handled by flex
             }}/>
 
             <View style={{
-                backgroundColor: "rgba(0,255,0,0.5)",
-                height: 200,
-                width: 200,
+                backgroundColor: colors.pgreen,
+                height: 150,
+                width: 150,
+                top: 20,
             }}/>
 
             <View style={{
-                backgroundColor: "blue", //rgba(0,0,255,0.5)
+                backgroundColor: colors.pblue, //rgba(0,0,255,0.5)
                 height: 100,
                 width: 100,
+                top: 20,
+                left: 20,
+                position: "absolute",
             }}/>
 
         </View>
@@ -90,6 +96,16 @@ function WelcomeScreen(props) {
 
 const styles = StyleSheet.create(
     {
+        container: {
+            // display: "flex",
+            flex: 1,
+            flexDirection: "row",
+            flexWrap: "wrap",
+            // justifyContent: "space-around",
+            // alignItems: "center",
+            // height: "100%",
+            // textAlign: "center"
+        },
         background: {
             // flex: 1,
             justifyContent: "flex-end",
@@ -123,15 +139,6 @@ const styles = StyleSheet.create(
             fontSize: "10px", 
             fontWeight: 'bold', 
         },
-        container: {
-            // display: "flex",
-            flex: 1,
-            flexDirection: "row",
-            // justifyContent: "space-around",
-            // alignItems: "center",
-            // height: "100%",
-            // textAlign: "center"
-        }
     }
 )
 
