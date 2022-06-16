@@ -126,7 +126,7 @@ const styles = StyleSheet.create(
         container: {
             // display: "flex",
             flex: 1,
-            flexDirection: "vertical",
+            flexDirection: "row",
             // justifyContent: "space-around",
             // alignItems: "center",
             // height: "100%",

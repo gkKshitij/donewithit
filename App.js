@@ -46,9 +46,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.6,
+    flex: 1,
     backgroundColor: 'rgba(255,0,0,0.6)',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
