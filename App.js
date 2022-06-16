@@ -13,7 +13,15 @@ export default function App() {
   // console.log("2app executed");
   // console.log(Dimensions.get("screen"));
   
-  return <WelcomeScreen />;
+  return( // <WelcomeScreen />;
+
+  
+    <View style={styles.container}>
+      <WelcomeScreen />
+    </View>
+
+  )
+
   // (
     // <View style={styles.container}>
     //   <Text>test update 5!!</Text>
@@ -38,8 +46,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'green',
+    flex: 0.6,
+    backgroundColor: 'rgba(255,0,0,0.6)',
     alignItems: 'center',
     justifyContent: 'center',
   },
