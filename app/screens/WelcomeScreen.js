@@ -1,145 +1,137 @@
-import React from "react";
-import { StyleSheet, View, Image, Text, } from "react-native";
+// import React from "react";
+// import { ImageBackground } from 'react';
+import React, {useState, Component} from 'react';
+import { StyleSheet, View, StatusBar, ImageBackground, Image, Text,  useWindowDimensions, SafeAreaView, Alert, Button, Dimensions} from "react-native";
+// import { StatusBar } from 'expo-status-bar';
 
 import colors from "../config/colors";
 
-// import React, {useState, Component, ImageBackground} from 'react';
-// import { ImageBackground } from 'react';
-// import { StyleSheet, Text, View, Image, SafeAreaView, Alert, Button, Dimensions } from 'react-native';
-
-
+const image = { uri: "https://reactjs.org/logo-og.png" };
 
 function WelcomeScreen(props) {
+
+    const size = useWindowDimensions();
+    const width = size.width;
+    const height = size.height;
+
+    const { styles } = useStyle();
+
     return (
 
-        // // centering image and etc... 
-        // <View style={styles.container}>
-        
-        //     <View>
-        //     <ImageBackground 
-        //         style={styles.background}
-        //         source={require("../assets/favicon.png")}
-        //         >
-        //     <View style={styles.loginButton}>Login</View>
-        //     </ImageBackground>
-        //     </View>
-
-        //     <View>
-        //     <Image
-        //         style={styles.rectt}          
-        //         source={require("../assets/favicon.png")}
-        //     />
-        //     <Text
-        //         style={styles.ttext}>resizeMode</Text>
-        //     </View>
-            
-        // </View>
-
-
-
         // // ----------------------------------------------------------------
-        // // flex layout
+        // // react site example
         // <View style={styles.container}>
-        
-        //     <View style={{
-        //         backgroundColor: "rgba(255,0,0,0.5)",
-        //         flex: 1,
-        //         width: 300,
-        //         // height: 300, // not required as its handled by flex
-        //     }}/>
-
-        //     <View style={{
-        //         backgroundColor: "rgba(0,255,0,0.5)",
-        //         flex: 1,
-        //         width: 200,
-        //     }}/>
-
-        //     <View style={{
-        //         backgroundColor: "blue", //rgba(0,0,255,0.5)
-        //         flex: 1,
-        //         width: 100,
-        //     }}/>
-
+        // <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+        //   <Text style={styles.text}>Inside</Text>
+        // </ImageBackground>
         // </View>
+        // // ----------------------------------------------------------------
+
 
         // ----------------------------------------------------------------
-        // positioning practice
-        //
+        // real thing practice
+
+        <View>
+
         <View style={styles.container}>
+           <Image 
+               style={styles.background}
+               source={require("../assets/k/xda live custom.png")}
+               />
+        </View>
+
+        <View style={styles.loginButton}>Login</View>
         
-            <View style={{
-                backgroundColor: colors.pred,
-                height: 200,
-                width: 200,
-                // height: 300, // not required as its handled by flex
-            }}/>
-
-            <View style={{
-                backgroundColor: colors.pgreen,
-                height: 150,
-                width: 150,
-                top: 20,
-            }}/>
-
-            <View style={{
-                backgroundColor: colors.pblue, //rgba(0,0,255,0.5)
-                height: 100,
-                width: 100,
-                top: 20,
-                left: 20,
-                position: "absolute",
-            }}/>
+        <Text style={styles.text}>Width: {size.width.toFixed(2)}</Text>
+        <Text style={styles.text}>Height: {size.height.toFixed(2)}</Text>
 
         </View>
+
     )
 }
 
-const styles = StyleSheet.create(
-    {
+
+
+// // ----------------------------------------------------------------
+// // react example StyleSheet
+// const styles = StyleSheet.create({
+//     container: {
+//       flex: 1,
+//     },
+//     image: {
+//       flex: 1,
+//       justifyContent: "center"
+//     },
+//     text: {
+//       color: "white",
+//       fontSize: 42,
+//       lineHeight: 84,
+//       fontWeight: "bold",
+//       textAlign: "center",
+//       backgroundColor: "#000000c0"
+//     }
+//   });
+// // ----------------------------------------------------------------
+const useStyle = () => {
+    const dimensions = useWindowDimensions();
+    console.log('Logging dimensions', dimensions)
+
+    const styles = StyleSheet.create({
+
         container: {
-            // display: "flex",
-            flex: 1,
-            flexDirection: "row",
-            flexWrap: "wrap",
+            backgroundColor: "rgba(255, 255, 255, 0.5)",
             // justifyContent: "space-around",
-            // alignItems: "center",
-            // height: "100%",
-            // textAlign: "center"
-        },
+            alignItems: "center",
+          },
+    
         background: {
-            // flex: 1,
-            justifyContent: "flex-end",
+            // height: dimensions.height,
+            height: dimensions.height-50,
+            width: dimensions.width,
+            justifyContent: 'center',
+            alignItems: 'center',
+    
             backgroundColor: "green",
-            resizeMode: "repeat",
-            height: 300,
-            width: 300,
-            // position: "relative",
-            // backgroundPosition: 'center',
-            // backgroundSize: 'cover',
-            // backgroundRepeat: 'repeat', // no-repeat
-            // width: '100vw',
-            // height: '100vh',
-        },
-        rectt: {
-            resizeMode: "center",
-            height: 100,
-            width: 300,
-            backgroundColor: "rgba(255,0,0,0.9)",
-        },
+            resizeMode: "contain",
+            width: "90%",
+            },
+
         loginButton: {
             width: '100%',
-            height: 70,
+            height: 50,
             backgroundColor: 'white',
             textAlign: 'center',
             flexDirection: 'column',
+            justifyContent: 'center',
+            },
+
+        rectt: {
+            resizeMode: "center",
+            height: 500,
+            width: 300,
+            backgroundColor: "rgba(255,0,0,0.9)",
         },
+
+        loginButton: {
+            width: '100%',
+            height: 50,
+            backgroundColor: 'white',
+            textAlign: 'center',
+            flexDirection: 'column',
+            justifyContent: 'center',
+        },
+
         ttext: {
             height  : '100%', 
             backgroundColor: 'white', 
             fontSize: "10px", 
             fontWeight: 'bold', 
         },
-    }
-)
+
+    })
+  
+    return { styles }
+}
+
 
 export default WelcomeScreen;

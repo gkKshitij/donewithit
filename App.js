@@ -14,7 +14,6 @@ export default function App() {
   // console.log(Dimensions.get("screen"));
   
   return( // <WelcomeScreen />;
-
   
     <View style={styles.container}>
       <WelcomeScreen />
