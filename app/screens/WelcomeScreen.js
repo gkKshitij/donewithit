@@ -1,5 +1,4 @@
 // import React from "react";
-// import { ImageBackground } from 'react';
 import React, {useState, Component} from 'react';
 import { StyleSheet, View, StatusBar, ImageBackground, Image, Text,  useWindowDimensions, SafeAreaView, Alert, Button, Dimensions} from "react-native";
 // import { StatusBar } from 'expo-status-bar';
@@ -18,18 +17,10 @@ function WelcomeScreen(props) {
 
     return (
 
-        // // ----------------------------------------------------------------
-        // // react site example
-        // <View style={styles.container}>
-        // <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        //   <Text style={styles.text}>Inside</Text>
-        // </ImageBackground>
-        // </View>
-        // // ----------------------------------------------------------------
-
-
         // ----------------------------------------------------------------
         // real thing practice
+
+        <SafeAreaView>
 
         <View>
 
@@ -40,37 +31,20 @@ function WelcomeScreen(props) {
                />
         </View>
 
-        <View style={styles.loginButton}>Login</View>
+        <View style={styles.loginButton}>
+        <Text style={styles.ttext}>Login</Text>
+        </View>
         
         <Text style={styles.text}>Width: {size.width.toFixed(2)}</Text>
         <Text style={styles.text}>Height: {size.height.toFixed(2)}</Text>
 
         </View>
 
+        </SafeAreaView>
     )
 }
 
 
-
-// // ----------------------------------------------------------------
-// // react example StyleSheet
-// const styles = StyleSheet.create({
-//     container: {
-//       flex: 1,
-//     },
-//     image: {
-//       flex: 1,
-//       justifyContent: "center"
-//     },
-//     text: {
-//       color: "white",
-//       fontSize: 42,
-//       lineHeight: 84,
-//       fontWeight: "bold",
-//       textAlign: "center",
-//       backgroundColor: "#000000c0"
-//     }
-//   });
 // // ----------------------------------------------------------------
 const useStyle = () => {
     const dimensions = useWindowDimensions();
@@ -92,17 +66,8 @@ const useStyle = () => {
             alignItems: 'center',
     
             backgroundColor: "green",
-            resizeMode: "contain",
-            width: "90%",
-            },
-
-        loginButton: {
-            width: '100%',
-            height: 50,
-            backgroundColor: 'white',
-            textAlign: 'center',
-            flexDirection: 'column',
-            justifyContent: 'center',
+            resizeMode: "center",
+            width: "100%",
             },
 
         rectt: {
@@ -115,16 +80,16 @@ const useStyle = () => {
         loginButton: {
             width: '100%',
             height: 50,
-            backgroundColor: 'white',
+            backgroundColor: colors.pblue,
             textAlign: 'center',
-            flexDirection: 'column',
+            flexDirection: 'row',
             justifyContent: 'center',
+            alignItems: 'center',
         },
 
         ttext: {
-            height  : '100%', 
-            backgroundColor: 'white', 
-            fontSize: "10px", 
+            // backgroundColor: 'white', 
+            fontSize: "15px", 
             fontWeight: 'bold', 
         },
 
