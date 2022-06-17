@@ -14,7 +14,7 @@ function WelcomeScreen(props) {
 
         // // centering image and etc... 
         // <View style={styles.container}>
-
+        
         //     <View>
         //     <ImageBackground 
         //         style={styles.background}
